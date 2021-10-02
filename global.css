@@ -7,7 +7,8 @@
   --scale: 5;
 }
 .parallax {
-  background-image: url("./assets/drengene.webp");
+  background-image: url("./assets/drengene.jpg");
+  min-height: 900px;
   min-height: 80vh;
 
   /* Create the parallax scrolling effect */
