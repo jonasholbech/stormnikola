@@ -122,7 +122,7 @@
     </ModalFooter>
   </Modal>
   <main>
-    <h1>Storm &amp; Nikola holder fødselsdagsfest!</h1>
+    <h1>Storm &amp; Nikola holder fødselsdags!</h1>
     <h2>Fredag den 19/11</h2>
     <p>Hej alle sammen, så er det vores tur!</p>
     <p>Vi holder fødselsdagsfest den 19/11 og DU er inviteret.</p>
