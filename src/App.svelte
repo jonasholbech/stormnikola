@@ -1,19 +1,21 @@
 <script>
   import { Styles } from "sveltestrap";
+  import { onMount } from "svelte";
   import {
     Button,
     Modal,
     ModalBody,
     ModalFooter,
     ModalHeader,
+    Image,
+    Toast,
+    ToastHeader,
+    ToastBody,
   } from "sveltestrap";
+
   let open = false;
+  let isOpen = false;
 
-  const toggle = () => {
-    open = !open;
-  };
-
-  import { onMount } from "svelte";
   let questions = [
     "Er Storm klog?",
     "Er Nikola flot?",
@@ -23,10 +25,11 @@
     "Er Nikola bedre end dig?",
     "Er Storm den bedste til Fortnite?",
     "Er Nikola smart?",
-    "Er Storm flot?",
-    "Er Nikola stærk?",
+
+    "Bliver Storm 12 år?",
+    "Spiller Nikola fodbold?",
     "Er Storm lækker?",
-    "Er Nikola sej",
+    "Bruger Nikola str 40 i sko?",
     "Er Storm bedre end dig?",
     "Er Nikola den bedste til Fortnite?",
     "Er Storm smart?",
@@ -68,8 +71,7 @@
     { l: "U", r: "🚨" },
     { l: "E", r: "🚠" },
   ];
-  console.log(replacements.length, questions.length);
-  //
+
   onMount(() => {
     const els = getElements();
     els.forEach((el) => {
@@ -78,10 +80,17 @@
       });
     });
   });
+  const toggle = () => {
+    open = !open;
+  };
+  const toggleToast = () => {
+    isOpen = !isOpen;
+  };
   function getElements() {
     return document.querySelectorAll("p, h1, h2, h3,h4,h5,h6");
   }
   function toggleLetter() {
+    window.location.href = "#main";
     open = !open;
     const els = getElements();
     els.forEach((el) => {
@@ -93,18 +102,18 @@
       const rep = replacements[count];
       el.textContent = el.textContent.replaceAll(rep.r, rep.l);
     });
+
     count = count + 1;
+    if (count === 2) {
+      isOpen = true;
+    }
   }
 </script>
 
 <Styles />
 <div id="app">
-  <div class="parallax" />
-  <div class="actions">
-    <Button size="lg" class="help" color="danger" on:click={toggle}
-      >HJÆLP!!!!!</Button
-    >
-  </div>
+  <!-- <div class="parallax" /> -->
+  <Image alt="Nikola og Storm" src="./assets/drengene.jpg" />
   <!-- <div class="scroll-indicator">
   <div class="dots" />
 </div> -->
@@ -121,8 +130,23 @@
       <Button color="secondary" on:click={toggle}>Nej</Button>
     </ModalFooter>
   </Modal>
-  <main>
-    <h1>Storm &amp; Nikola holder fødselsdags!</h1>
+  <main id="main">
+    <div class="actions">
+      <Button size="lg" class="help" color="danger" on:click={toggle}>
+        HJÆLP!!!!!
+      </Button>
+    </div>
+
+    <Toast {isOpen}>
+      <ToastHeader>OK, her er lidt hjælp</ToastHeader>
+      <ToastBody>
+        <p>OK, du fik lidt hjælp.</p>
+        <p>Jeg gav dig alle A'er og B'er</p>
+        <p>Skal du have mere?</p>
+        <Button color="primary" on:click={toggleToast}>Luk</Button>
+      </ToastBody>
+    </Toast>
+    <h1>Storm &amp; Nikola holder fødselsdag!</h1>
     <h2>Fredag den 19/11</h2>
     <p>Hej alle sammen, så er det vores tur!</p>
     <p>Vi holder fødselsdagsfest den 19/11 og DU er inviteret.</p>
@@ -135,7 +159,7 @@
       vil vi meget gerne høre om det
     </p>
     <p>
-      SU: seneste den 12/11 til Storms far Jonas, på telefon <a
+      SU: senest den 12/11 til Storms far Jonas, på telefon <a
         href="tel:51923191">51 92 31 91</a
       >
     </p>
