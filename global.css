@@ -6,18 +6,18 @@
 :root {
   --scale: 5;
 }
-.parallax {
+/*.parallax {
   background-image: url("./assets/drengene.jpg");
   min-height: 900px;
   min-height: 80vh;
 
-  /* Create the parallax scrolling effect */
+  
   background-attachment: fixed;
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
   background-size: cover;
-}
+}*/
 
 body {
   color: #333;
