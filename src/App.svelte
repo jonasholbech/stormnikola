@@ -19,23 +19,22 @@
   let questions = [
     "Er Storm klog?",
     "Er Nikola flot?",
-    "Er Storm lækker?",
+    "Lover du at give Storm og Nikola dine lommepenge?",
     "Er Nikola stærk?",
     "Er Storm sej",
     "Er Nikola bedre end dig?",
-    "Er Storm den bedste til Fortnite?",
+    "Er Storm den bedste til CS:GO?",
     "Er Nikola smart?",
-
     "Bliver Storm 12 år?",
     "Spiller Nikola fodbold?",
-    "Glæder drengene sig til i kommer?",
+    "Glæder Storm og Nikola sig til i kommer?",
     "Bruger Nikola str 40 i sko?",
-    "Spiller drengene Mordheim?",
-    "Kan drengene godt lide at danse?",
+    "Spiller Storm og Nikola Mordheim?",
+    "Kan Storm og Nikola godt lide rollespil?",
     "Er Storm højere end Nikola?",
-    "Håber drengene DU kommer?",
+    "Håber Storm og Nikola DU kommer?",
   ];
-  //TODO: check emojis på storms telefon
+
   let count = 0;
   let replacements = [
     { l: "a", r: "💩" },
@@ -55,7 +54,7 @@
     { l: "o", r: "🥑" },
     { l: "p", r: "🥝" },
     { l: "r", r: "🥭" },
-    { l: "s", r: "🫐" },
+    { l: "s", r: "🤣" },
     { l: "t", r: "🍏" },
     { l: "u", r: "🍎" },
     { l: "v", r: "🍋" },
