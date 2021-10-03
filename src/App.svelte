@@ -15,7 +15,7 @@
 
   let open = false;
   let isOpen = false;
-
+  let showButton = true;
   let questions = [
     "Er Storm klog?",
     "Er Nikola flot?",
@@ -35,7 +35,6 @@
     "Er Storm højere end Nikola?",
     "Håber drengene DU kommer?",
   ];
-  //TODO: fjern hjælp mår der ikke er flere
   //TODO: check emojis på storms telefon
   let count = 0;
   let replacements = [
@@ -109,6 +108,9 @@
     if (count === 2) {
       isOpen = true;
     }
+    if (count >= replacements.length) {
+      showButton = false;
+    }
   }
 </script>
 
@@ -126,12 +128,13 @@
     </ModalFooter>
   </Modal>
   <main id="main">
-    <div class="actions">
-      <Button size="lg" class="help" color="danger" on:click={toggle}>
-        HJÆLP!!!!!
-      </Button>
-    </div>
-
+    {#if showButton}
+      <div class="actions">
+        <Button size="lg" class="help" color="danger" on:click={toggle}>
+          HJÆLP!!!!!
+        </Button>
+      </div>
+    {/if}
     <Toast {isOpen}>
       <ToastHeader>OK, her er lidt hjælp</ToastHeader>
       <ToastBody>
