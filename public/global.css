@@ -10,18 +10,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-/*.parallax {
-  background-image: url("./assets/drengene.jpg");
-  min-height: 900px;
-  min-height: 80vh;
-
-  
-  background-attachment: fixed;
-  background-position-x: center;
-  background-position-y: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-}*/
 
 body {
   color: #333;

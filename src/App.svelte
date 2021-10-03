@@ -19,8 +19,8 @@
   let questions = [
     "Er Storm klog?",
     "Er Nikola flot?",
-    "Er Storm stærk?",
-    "Er Nikola lækker?",
+    "Er Storm lækker?",
+    "Er Nikola stærk?",
     "Er Storm sej",
     "Er Nikola bedre end dig?",
     "Er Storm den bedste til Fortnite?",
@@ -28,13 +28,15 @@
 
     "Bliver Storm 12 år?",
     "Spiller Nikola fodbold?",
-    "Er Storm lækker?",
+    "Glæder drengene sig til i kommer?",
     "Bruger Nikola str 40 i sko?",
-    "Er Storm bedre end dig?",
-    "Er Nikola den bedste til Fortnite?",
-    "Er Storm smart?",
-    "Er Nikola klog?",
+    "Spiller drengene Mordheim?",
+    "Kan drengene godt lide at danse?",
+    "Er Storm højere end Nikola?",
+    "Håber drengene DU kommer?",
   ];
+  //TODO: fjern hjælp mår der ikke er flere
+  //TODO: check emojis på storms telefon
   let count = 0;
   let replacements = [
     { l: "a", r: "💩" },
@@ -112,14 +114,7 @@
 
 <Styles />
 <div id="app">
-  <!-- <div class="parallax" /> -->
   <Image alt="Nikola og Storm" src="./assets/drengene.jpg" />
-  <!-- <div class="scroll-indicator">
-  <div class="dots" />
-</div> -->
-  <!-- <div class="mouse">
-    <div class="scrollWheel" />
-  </div> -->
   <Modal isOpen={open} {toggle}>
     <ModalHeader {toggle}>Modal title</ModalHeader>
     <ModalBody>
